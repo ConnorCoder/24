@@ -34,15 +34,15 @@ function gr(x) {
 function reload() {
   var not_found = true;
   while (not_found) {
-    var random = [];
+    var randomnum = [];
     for (x=0;x<4;x++) {
-      random.push(random(0, 10));
+      randomnum.push(random(0, 10));
     }
     if (forbidden.indexOf(gr(random).join('')) == -1) {
-      document.getElementsByClassName('one')[0].value = random[0];
-      document.getElementsByClassName('two')[0].value = random[1];
-      document.getElementsByClassName('three')[0].value = random[2];
-      document.getElementsByClassName('four')[0].value = random[3];
+      document.getElementsByClassName('one')[0].value = randomnum[0];
+      document.getElementsByClassName('two')[0].value = randomnum[1];
+      document.getElementsByClassName('three')[0].value = randomnum[2];
+      document.getElementsByClassName('four')[0].value = randomnum[3];
       not_found = false;
     }
   }
