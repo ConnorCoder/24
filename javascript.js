@@ -1,6 +1,6 @@
 var forbidden = [];
 function submit() {
-  var numbs = range(0, 10);
+  var numbs = range(0, 10, 1);
   var numbers = [];
   var ans = get(['answer'], 0, ['.value'], 0).toString();
   for (x=0;x<ans.length;x++) {
