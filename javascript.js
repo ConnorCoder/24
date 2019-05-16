@@ -1,8 +1,8 @@
 var forbidden = [];
 function submit() {
-  var numbs = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var numbs = range(0, 10);
   var numbers = [];
-  var ans = document.getElementById('answer').value;
+  var ans = get(['answer'], 0, ['.value'], 0).toString();
   for (x=0;x<ans.length;x++) {
     for (y=0;y<numbs.length;y++) {
       if (ans[x] === numbs[y]) {
@@ -19,14 +19,9 @@ function submit() {
     }
   }
   numbers = gr(numbers).join('');
-  var all = [];
-  all.push(document.getElementsByClassName('one')[0].value);
-  all.push(document.getElementsByClassName('two')[0].value);
-  all.push(document.getElementsByClassName('three')[0].value);
-  all.push(document.getElementsByClassName('four')[0].value);
-  all = gr(all).join('');
+  var all = gr(get(['one', 'two', 'three', 'four'], [0, 0, 0, 0], ['.value', '.value', '.value', '.value'], 1)).join('');
   if (all === numbers) {
-    if (eval(document.getElementById('answer').value) === 24) {
+    if (eval(get(['answer'], 0, ['.value'], 0).toString()) === 24) {
       document.getElementById('answer').value = "";
       forbid();
     }
@@ -41,7 +36,7 @@ function reload() {
   while (not_found) {
     var random = [];
     for (x=0;x<4;x++) {
-      random.push(Math.floor(Math.random() * 11));
+      random.push(random(0, 10));
     }
     if (forbidden.indexOf(gr(random).join('')) == -1) {
       document.getElementsByClassName('one')[0].value = random[0];
@@ -53,12 +48,7 @@ function reload() {
   }
 }
 function forbid() {
-  var cur = [];
-  cur.push(document.getElementsByClassName('one')[0].value);
-  cur.push(document.getElementsByClassName('two')[0].value);
-  cur.push(document.getElementsByClassName('three')[0].value);
-  cur.push(document.getElementsByClassName('four')[0].value);
-  cur = gr(cur).join('');
+  var cur = gr(get(['one', 'two', 'three', 'four'], [0, 0, 0, 0], ['.value', '.value', '.value', '.value'], 1)).join('')
   console.log("Forbidded: " + cur);
   forbidden.push(cur);
   reload();
