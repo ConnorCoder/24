@@ -21,7 +21,7 @@ function submit() {
   numbers = gr(numbers).join('');
   var all = gr(get(['one', 'two', 'three', 'four'], [0, 0, 0, 0], ['.value', '.value', '.value', '.value'], 1)).join('');
   if (all === numbers) {
-    if (eval(get(['answer'], 0, ['.value'], 0).toString()) === 24) {
+    if (eval(get(['answer'], 0, ['.value'], 0).toString()).toString() === "24") {
       document.getElementById('answer').value = "";
       forbid();
     }
