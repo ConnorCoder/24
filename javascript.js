@@ -38,7 +38,7 @@ function reload() {
     for (x=0;x<4;x++) {
       randomnum.push(random(0, 10));
     }
-    if (forbidden.indexOf(gr(random).join('')) == -1) {
+    if (forbidden.indexOf(gr(randomnum).join('')) == -1) {
       document.getElementsByClassName('one')[0].value = randomnum[0];
       document.getElementsByClassName('two')[0].value = randomnum[1];
       document.getElementsByClassName('three')[0].value = randomnum[2];
