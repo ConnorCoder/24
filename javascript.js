@@ -22,7 +22,7 @@ function submit() {
   var all = gr(get(['one', 'two', 'three', 'four'], [0, 0, 0, 0], ['.value', '.value', '.value', '.value'], 1)).join('');
   if (all === numbers) {
     if (eval(ans).toString() === "24") {
-      document.getElementById('answer').value = "";
+      set(['answer'], 0, ['.value'], [''], 0);
       forbid();
     }
   }
