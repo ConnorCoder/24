@@ -39,10 +39,6 @@ function reload() {
       randomnum.push(random(0, 10));
     }
     if (forbidden.indexOf(gr(randomnum).join('')) == -1) {
-      //document.getElementsByClassName('one')[0].value = randomnum[0];
-      //document.getElementsByClassName('two')[0].value = randomnum[1];
-      //document.getElementsByClassName('three')[0].value = randomnum[2];
-      //document.getElementsByClassName('four')[0].value = randomnum[3];
       set(['one', 'two', 'three', 'four'], [0, 0, 0, 0], ['.value', '.value', '.value', '.value'], [randomnum[0], randomnum[1], randomnum[2], randomnum[3]], 1);
       not_found = false;
     }
